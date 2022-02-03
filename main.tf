@@ -3,7 +3,14 @@ terraform {
     aws = {
       source  = "hashicorp/aws"
       version = "3.44.0"
+      
     }
+  }
+
+  backend "s3" {
+    bucket = "YOUR-UNIQUE-BUCKET-ID"
+    key    = "circle-ci-backend-20220203153326984900000001"
+    region = "us-east-1"
   }
   required_version = "> 0.14"
 }
